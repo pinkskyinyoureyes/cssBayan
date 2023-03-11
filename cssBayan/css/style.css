@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    background-color: #3B3A3D;
+}
+
+summary {
+    list-style: none;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.task-name {
+    margin-bottom: 50px;
+}
+
+span {
+    color: #7AA899;
+    filter: drop-shadow(0px 0px 5px #7AA899);
+    animation: changeColor 1s infinite;
+}
+
+@keyframes changeColor {
+    0% { filter: drop-shadow(0px 0px 5px #7AA899) }
+    50% { filter: drop-shadow(0px 0px 10px #7AA899) }
+    100% { filter: drop-shadow(0px 0px 5px #7AA899) }
+}
+
+.accordion {
+    box-shadow: 0 0 20px 5px rgba(122, 168, 153, 0.6);
+    border-radius: 10px;
+    min-width: 360px;
+}
+
+.accordion__title {
+    font-size: 20px;
+    cursor: pointer;
+    border-bottom: 2px solid #000000;
+    padding: 10px 40px 10px 10px;
+    position: relative;
+}
+
+.accordion__title:hover {
+    background-color: #7AA899;
+    transition: 0.3s;
+}
+
+.accordion__title::after {
+    display: block;
+    content: "+";
+    font-size: 30px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 1s;
+}
+
+.accordion__item:first-child .accordion__title {
+    border-radius: 10px 10px 0 0;
+}
+
+.accordion__item:last-child .accordion__title {
+    border-radius: 0 0 10px 10px;
+}
+
+.accordion__item[open]:last-child .accordion__title {
+    border-radius: 0px;
+}
+
+.accordion__item:not([open]):last-child .accordion__title {
+    border-bottom: none;
+}
+
+.meme__image:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+.accordion__item[open] .accordion__title{
+    color: #7AA899;
+    border-bottom: 2px solid #7AA899;
+}
+
+.accordion__item[open] .accordion__title:hover {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+}
+
+.accordion__item[open] .accordion__title::after {
+    transform: translateY(-50%) rotate(45deg)
+}
