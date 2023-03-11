@@ -20,17 +20,30 @@ summary {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 60vh;
 }
 
-.task-name {
-    margin-bottom: 50px;
+@media (max-width: 399px) {
+    .wrapper {
+        padding: 0 20px;
+    }
 }
 
-span {
+.logo {
     color: #7AA899;
     filter: drop-shadow(0px 0px 5px #7AA899);
     animation: changeColor 1s infinite;
+    margin-bottom: 5px;
+}
+
+.task-name {
+    margin-bottom: 30px;
+    color: #7AA899;
+    filter: drop-shadow(0px 0px 5px #7AA899);
+}
+
+.task-name span {
+    color: #3B3A3D;
 }
 
 @keyframes changeColor {
@@ -42,8 +55,11 @@ span {
 .accordion {
     box-shadow: 0 0 20px 5px rgba(122, 168, 153, 0.6);
     border-radius: 10px;
-    min-width: 360px;
 }
+
+/* .accordion:hover > .accordion__item > .accordion__title {
+    color: #7AA899;
+} */
 
 .accordion__title {
     font-size: 20px;
@@ -51,6 +67,18 @@ span {
     border-bottom: 2px solid #000000;
     padding: 10px 40px 10px 10px;
     position: relative;
+}
+
+@media (max-width: 399px) {
+    .accordion__title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 334px) {
+    .accordion__title {
+        font-size: 14px;
+    }
 }
 
 .accordion__title:hover {
@@ -85,7 +113,7 @@ span {
     border-bottom: none;
 }
 
-.meme__image:last-child {
+.accordion__item:last-child .meme__container .meme__image {
     border-radius: 0 0 10px 10px;
 }
 
