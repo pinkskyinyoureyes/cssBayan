@@ -1,4 +1,4 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -60,10 +60,6 @@ summary::-webkit-details-marker {
     box-shadow: 0 0 20px 5px rgba(122, 168, 153, 0.6);
     border-radius: 10px;
 }
-
-/* .accordion:hover > .accordion__item > .accordion__title {
-    color: #7AA899;
-} */
 
 .accordion__title {
     font-size: 20px;
@@ -133,4 +129,130 @@ summary::-webkit-details-marker {
 
 .accordion__item[open] .accordion__title::after {
     transform: translateY(-50%) rotate(45deg)
+} */
+
+h1 {
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.2;
+    background-color: #3B3A3D;
+}
+
+@media (max-width: 320px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+.bayan {
+    max-width: 400px;
+    margin: 30px auto;
+    color: #ffffff;
+}
+
+.bayan:hover {
+    color: #7AA899;
+    transition: 0.5s;
+}
+
+.bayan:hover > .bayan-item > .bayan-title::after {
+    display: block;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    color: #7AA899;
+    filter: drop-shadow(0px 0px 5px #7AA899);
+    animation: changeColor 1s infinite;
+}
+
+.task-name {
+    margin-bottom: 30px;
+    color: #7AA899;
+    filter: drop-shadow(0px 0px 5px #7AA899);
+}
+
+.task-name span {
+    color: #3B3A3D;
+}
+
+@keyframes changeColor {
+    0% { filter: drop-shadow(0px 0px 5px #7AA899) }
+    50% { filter: drop-shadow(0px 0px 10px #7AA899) }
+    100% { filter: drop-shadow(0px 0px 5px #7AA899) }
+}
+
+.bayan-input {
+    width: 0;
+    height: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+}
+
+.bayan-input:checked ~ .bayan-title {
+    background-color: #7AA899;
+    color: #ffffff;
+}
+
+.bayan-input:checked ~ .bayan-title::after {
+    transform: translateY(-50%) rotate(45deg)
+}
+
+.bayan-title {
+    display: block;
+    cursor: pointer;
+    border-bottom: 2px solid #7AA899;
+    padding: 10px 15px;
+    position: relative;
+    transition: background 0.3s ease-out;
+}
+
+.bayan-title::after {
+    display: none;
+    content: "+";
+    font-size: 25px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.5s;
+}
+
+.bayan-title:hover {
+    background-color: #7AA899;
+    color: #ffffff;
+}
+
+.bayan-image {
+    width: 0;
+    height: 0;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 5px 0 5px 0;
+    cursor: pointer;
+    transform: scale(0);
+    transition: 0.3s;
+}
+
+.bayan-input:checked ~ .bayan-image {
+    width: 304px;
+    height: 304px;
+    transform: scale(1);
+}
+
+.bayan-item:hover .bayan-image {
+    width: 304px;
+    height: 304px;
+    transform: scale(1);
 }
